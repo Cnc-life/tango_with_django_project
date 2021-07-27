@@ -1,7 +1,10 @@
 from django.conf.urls import url
-from rango import views
+from django.urls import path
+from rango import views, admin
+
+app_name = 'rango'
 
 urlpatterns = [
-url(r'^$', views.index, name='index'),
-url(r'^$', views.about, name='about'),
+    path('', views.index, name='index'),
+    path('about/', views.about, name='about'),
 ]
